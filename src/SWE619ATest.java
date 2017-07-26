@@ -19,6 +19,8 @@ public class SWE619ATest {
 		tempList.add(20);
 		tempList.add(60);
 		
+		//change here git testing
+		
 		//Integer result = min(tempList);
 		//assertEquals(20, list.size());
 		
