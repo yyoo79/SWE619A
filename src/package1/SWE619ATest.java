@@ -1,3 +1,4 @@
+package package1;
 
 import static org.junit.Assert.*;
 
@@ -23,8 +24,10 @@ public class SWE619ATest {
 		//change here git testing #2 pull testing
 		//change #3 testing from desktop
 		
-		//Integer result = min(tempList);
-		//assertEquals(20, list.size());
+		SWE619A swe619a = new SWE619A();
+		
+		Integer result = swe619a.min(tempList);
+		assertEquals(new Integer(10), result);
 		
 	}
 
