@@ -21,6 +21,7 @@ public class SWE619ATest {
 		
 		//change here git testing
 		//change here git testing #2 pull testing
+		//change #3 testing from desktop
 		
 		//Integer result = min(tempList);
 		//assertEquals(20, list.size());
