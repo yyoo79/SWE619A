@@ -7,15 +7,20 @@ public class SWE619A {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// System.out.println("Hello world!");
-		
+				
 		List<Integer> tempList = new ArrayList<Integer>();
 		tempList.add(50);
 		tempList.add(20);
 		tempList.add(60);
-		
 		Integer result = min(tempList);
-		
 		System.out.println("The minimum number is " + result);
+		
+		List<String> tempList2 = new ArrayList<String>();
+		tempList2.add("Peter");
+		tempList2.add("Astro");
+		tempList2.add("Charles");
+		String result2 = min(tempList2);
+		System.out.println("The minimum string is " + result2);
 
 	}
 	
@@ -30,18 +35,32 @@ public class SWE619A {
     * @throws IllegalArgumentException if list is empty
     */
     public static <T extends Comparable<? super T>> T min (List<? extends T> list) {
-       if (list.size() == 0) {
-          throw new IllegalArgumentException ("Min.min");
-       }
-
-       T result = list.get(0);
-
-       for (T comp : list) {
-           if (comp.compareTo(result) < 0) {    // throws NPE, CCE as needed
-               result = comp;
-           }
-       }
-       return result;
+    	
+    	// throws NPE if list is null
+        if (list == null) {
+     	   throw new NullPointerException ("Min.NPE");
+        }
+    	
+    	if (list.size() == 0) {    		
+    		throw new IllegalArgumentException ("Min.min");
+    	}
+    	
+    	T result = list.get(0);
+    	
+    	for (T comp : list) {
+		   
+    		// throws NPE
+    		if (comp == null){
+    			throw new NullPointerException ("Min.NPE");
+    		}
+    		
+    		// throws CCE
+	   
+    		if (comp.compareTo(result) < 0) {    // throws NPE, CCE as needed
+    			result = comp;
+    		}
+    	}
+    	return result;
     }
     
     /** Assignment

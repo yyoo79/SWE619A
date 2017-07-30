@@ -15,17 +15,22 @@ public class SWE619ATest {
 	public void testMin() {
 		//fail("Not yet implemented");
 		
+		//happy path tests. 
 		List<Integer> tempList = new ArrayList<Integer>();
 		tempList.add(50);
 		tempList.add(20);
-		tempList.add(60);
+		tempList.add(60);		
+		Integer result = SWE619A.min(tempList);
+		assertEquals(new Integer(20), result);
 		
-		//change here git testing
-		//change here git testing #2 pull testing
-		//change #3 testing from desktop
-		
-		//SWE619A swe619a = new SWE619A();
-		
+	}
+	
+	@Test
+	public void testMinNPE() {
+	
+		// @throws NullPointerException if list is null or
+	    //         if any list elements are null
+		List<Integer> tempList =null;
 		Integer result = SWE619A.min(tempList);
 		assertEquals(new Integer(10), result);
 		
