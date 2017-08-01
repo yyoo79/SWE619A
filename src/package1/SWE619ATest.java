@@ -19,7 +19,7 @@ public class SWE619ATest {
 		List<Integer> tempList = new ArrayList<Integer>();
 		tempList.add(50);
 		tempList.add(20);
-		tempList.add(60);		
+		tempList.add(60);
 		Integer result = SWE619A.min(tempList);
 		assertEquals(new Integer(20), result);
 		
@@ -30,9 +30,9 @@ public class SWE619ATest {
 	
 		// @throws NullPointerException if list is null or
 	    //         if any list elements are null
-		List<Integer> tempList =null;
-		Integer result = SWE619A.min(tempList);
-		assertEquals(new Integer(10), result);
+		List<Integer> tempList = null;
+		Integer result = SWE619A.min(tempList);		
+		assertEquals(new NullPointerException ("Min.NPE"), result);
 		
 	}
 

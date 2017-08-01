@@ -5,9 +5,7 @@ import java.util.List;
 public class SWE619A {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		// System.out.println("Hello world!");
-				
+						
 		List<Integer> tempList = new ArrayList<Integer>();
 		tempList.add(50);
 		tempList.add(20);
@@ -21,12 +19,17 @@ public class SWE619A {
 		tempList2.add("Charles");
 		String result2 = min(tempList2);
 		System.out.println("The minimum string is " + result2);
+		
+		List<String> tempList3 = null;
+		String restul3 = min(tempList3);
+		System.out.println("The minimum string is " + restul3);
+		
 
 	}
 	
 	
 	/**
-    * Returns the mininum element in a list
+    * Returns the minimum element in a list
     * @param list Comparable list of elements to search
     * @return the minimum element in the list
     * @throws NullPointerException if list is null or
@@ -38,11 +41,11 @@ public class SWE619A {
     	
     	// throws NPE if list is null
         if (list == null) {
-     	   throw new NullPointerException ("Min.NPE");
+     	   throw new NullPointerException ("SWE619A.min");
         }
     	
     	if (list.size() == 0) {    		
-    		throw new IllegalArgumentException ("Min.min");
+    		throw new IllegalArgumentException ("SWE619A.min");
     	}
     	
     	T result = list.get(0);
