@@ -9,16 +9,16 @@ public class FindPrimeFactor {
     public static void main(String[] args) {
        
         List<Integer> testA = new ArrayList<Integer>();
+        testA.add(10);
         testA.add(12);
-        testA.add(25);
-        testA.add(18);
-        testA.add(8);
+//        testA.add(18);
+//        testA.add(8);
         
         List<Integer> testB = new ArrayList<Integer>();
-        testB.add(6);
-        testB.add(2);
+        testB.add(0);
         testB.add(3);
-        testB.add(2);
+//        testB.add(3);
+//        testB.add(2);
       
         System.out.println(findPrimeFactor(testA,testB));        
                 
