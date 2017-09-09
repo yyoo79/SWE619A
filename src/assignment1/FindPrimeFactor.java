@@ -61,7 +61,7 @@ public class FindPrimeFactor {
 	public static int findPrimeFactor(List<Integer> a, List<Integer> b) {
 		for (int i = 0; i < b.size() ; i++) {	
 			// Check factor AND check Prime
-			if ((a.get(i) % b.get(i) == 0) && isPrime(b.get(i))) { 
+			if (isPrime(b.get(i)) && (a.get(i) % b.get(i) == 0) ) {
 				return i;
 			}
 		}
