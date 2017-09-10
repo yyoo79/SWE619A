@@ -8,14 +8,14 @@ import static org.junit.Assert.*;
 import java.util.*;
 
 @RunWith(Parameterized.class)
-public class FindPrimeFactor2Test {
+public class FindPrimeFactorTest {
 
 	 List<Integer> a;
 	 List<Integer> b;
 
 	 int index;
 
-	 public FindPrimeFactor2Test(List<Integer> a, List<Integer> b, int index) {
+	 public FindPrimeFactorTest(List<Integer> a, List<Integer> b, int index) {
 	     this.a = a;
 	     this.b = b;
 	     this.index = index;
@@ -37,7 +37,7 @@ public class FindPrimeFactor2Test {
 
 	 @Test
 	 public void testNormalCases() {
-	     assertEquals(FindPrimeFactor2.findPrimeFactor2(a, b), index);
+	     assertEquals(FindPrimeFactor.findPrimeFactor(a, b), index);
 	 }
 
 }
