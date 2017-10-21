@@ -24,18 +24,18 @@ public class Bag<E> {
 			 map.put(e, 1);
 		 }
 	 }
-	
-	 // remove 1 occurrence of e from this
-	 public void remove(E e) {
-		 if (isIn(e)) {			 
-			 if (map.get(e) == 1) {
-				 map.remove(e);
-			 }
-			 else {
-				 map.put(e, map.get(e)-1);
-			 }				 
-		 }		 
-	 }
+
+	// remove 1 occurrence of e from this
+	public void remove(E e) {
+		if (isIn(e)) {	//must make sure value exists to prevent NPE
+			int value = map.get(e);
+			if (value > 1) {
+				map.put(e, value - 1);
+			} else {
+				map.remove(e);
+			}
+		}
+	}
 	
 	 // return true iff e is in this
 	 public boolean isIn(E e) {
@@ -43,8 +43,12 @@ public class Bag<E> {
 	 }
 	 
 	 // return cardinality of this
-	 public int size() {	 
-		 return map.size();
+	 public int size() {	
+		 int count=0;		 
+		 for(Integer i : map.values()) {
+			 count += i;
+		 }	 
+		 return count;
 	 }
 	
 	 // if this is empty throw ISE
@@ -61,13 +65,12 @@ public class Bag<E> {
 	 
 	 public boolean repOK() {
 		 //rep-inv:  range of map contains only positive integers
-		 Iterator<Map.Entry<E, Integer>> itr = map.entrySet().iterator();		 		 
-		 while (itr.hasNext()) {
-			 Map.Entry<E, Integer> entry = (Map.Entry<E, Integer>)itr.next();
-			 if (entry.getValue()<1) {
+		 if(map == null)
+			 return false;
+		 for(Integer i : map.values()) {
+			 if(i < 1)
 				 return false;
-			 }
-		 }		 
+		 }
 		 return true;
 	 }
 	 
@@ -104,4 +107,18 @@ public class Bag<E> {
 	 }
 	 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
