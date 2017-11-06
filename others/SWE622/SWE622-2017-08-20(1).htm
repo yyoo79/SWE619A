@@ -1,0 +1,463 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>SWE 622 - Distributed Software Engineering</title>
+  <meta name="description" content="SWE 622 Syllabus">
+  <meta name="keywords" content="George Mason University, SWE 622, distributed software">
+  <meta name="author" content="David A. Wheeler">
+  <meta name="generator" content="vim">
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+</head>
+
+<body>
+
+<h1>Syllabus for SWE 622 - Distributed Software Engineering - Fall 2017</h1>
+
+<p>
+<h1>What is this course?</h1>
+<p>
+This course conveys key 
+concepts for designing and building distributed software systems.&nbsp; 
+The course is geared towards software engineers that work mostly at the 
+application-level, but need to understand the features and limitations 
+of existing middleware for distributed systems.&nbsp; Additionally, the 
+course covers some research topics related to currently open 
+problems.&nbsp;Specifically, some of the topic that will be covered are 
+as follows: definition and scope of distribution, principles of 
+communication and computation, socket programming, remote method 
+invocation, software architecture of distributed systems, middleware 
+systems, service discovery, quality of service, adaptive systems, 
+mobility, security, and fault tolerance.
+
+<b>Please read this syllabus</b>.  I like the Morphus image saying,
+<a href="https://imgflip.com/i/btlqz">What if I told you...
+the answer is in the syllabus?</a>
+Please <b>read</b> the syllabus before asking questions about the course,
+and certainly before missing a deadline... it will save us all time.
+
+<a name="Key Information"></a>
+<h1>Key Information</h1>
+
+<table frame="void" width="100%" cellspacing="1" cellpadding="1" align=center>
+<tr>
+<td>Class:</td>
+<td>SWE 622 - Distributed Software Engineering</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Professor:</td>
+<td><a href="http://www.dwheeler.com">Dr. David A. Wheeler</a>.
+Email dwheele4 at gmu *dot* edu (no &#8220;r&#8221;).  703-845-6662.
+GMU email is my preferred method, but I may not respond immediately;
+call if you are in a hurry.
+Office hours by appointment only.</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Class Hours &amp; Location:</td>
+<td>Wednesdays, 7:20 pm - 10:00 pm, Art and Design Building 2026</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Prerequisites:</td>
+<td>SWE Foundation courses and strong Java programming experience.
+<td></td>
+</tr>
+
+<tr>
+<td>Class website:</td>
+<td>Use Blackboard.  Log in to
+<a href="http://mymasonportal.gmu.edu">mymasonportal.gmu.edu</a>,
+select the &#8220;Sources&#8221; tab, and select &#8220;SWE 622&#8221; (for this semester)</td>
+<td></td>
+</tr>
+</table>
+
+<p>
+The syllabus, including the schedule and topics to be covered,
+is subject to change, but I will notify you of any changes.
+This class is based on the structure set up by Dr. Sam Malek, with
+some changes by Dr. Paul Ammann;
+you'll see their name or URLs pointing to their sites occasionally.
+
+<p>
+<a name="Reading List"></a>
+<h1>Reading List</h1>
+<p>
+The textbook is
+<i>Distributed Systems: Principles and Paradigms (2nd edition)</i>, Andrew S. Tanenbaum and Maarten Van Steen, 2007/2016, ISBN 0-13-239227-5.
+Either the hardback or paperback is fine.
+You can <a href="https://www.distributed-systems.net/index.php/books/distributed-systems/">get a free personal digital copy of the second edition</a> if
+you send the authors your email address.
+Beware: There's also a <i>third</i> edition that was released in 2017;
+we're <i>not</i> using that edition.
+See below for supplemental papers.
+<p>
+I may add a few additional required reading articles as we go.
+<p>
+The book is fine for fundamentals, but
+we will supplement it with some key additions.
+This includes discussions of REST,
+Blockchains (including Bitcoin), and Apache Hadoop and Spark.
+
+<h1 id="grading">Grading</h1>
+<p>
+<ol>
+<li>Five Reading Assignments  20% (5 x 4%)
+<li>Two Programming Assignments 30% (2 x 15%)
+<li>Two Exams 48% (2 x 24%)
+<li>Hadoop/Spark online quiz (2%)
+</ol>
+<!--
+Assignment focus:
+RA1: 1
+RA2: 2,3
+RA3: 4,5
+RA4: 6,7
+RA5: 8,9
+Hadoop: 10
+Prog1: 2
+Prog2: 3
+-->
+<p>
+The exams are closed book, closed notes (no access to either), no Internet.
+You <i>may</i> bring a numeric-only calculator
+(one with a log function is convenient), but <i>not</i> one which
+can store texts or has Internet access.
+<p>
+The reading assignments are group assignments, with open book,
+open notes, and open Internet.
+I want groups of 4, though some variation is possible.
+List your group members in your submission.
+Groups do not have to have the same membership each time
+(though they often do, and that's fine too).
+Everyone must <i>contribute</i> to the group.
+It's an honor code violation if someone OUTSIDE the group does your work.
+If there is disagreement, work to figure out the cause, so that
+you can produce better answers.
+For example, some answers may vary depending on certain factors;
+your group must figure out what factors the answer depends on.
+<p>
+The programming assignments are individual assignments;
+you must do your own work.
+<p>
+Assignments must be submitted via Blackboard unless otherwise warranted.
+For group assignments (the reading assignments) only one team member
+needs to submit.
+I typically use tools to check for plagerism; please don't plagerize.
+Do not turn them in late; penalty is -10% per day, and not accepted after
+three days.
+Students must give me notice as soon as reasonably possible if an
+illness or other unexpected event will make it impossible to submit work
+or take a test on time.
+<p>
+I grade on results, not effort.
+Please don't tell me "I worked so hard" as a reason to improve your grade;
+I presume everyone in the class works hard, and it's not fair to improve
+your grade if others produced better results.
+
+<h1 id="schedule">Schedule</h1>
+
+<p>
+The lectures will cover the key issues and
+explain some things that might not be clear otherwise.
+However, you are responsible for reading and understanding the material
+in the assigned readings (and not just knowing what&#8217;s in the lectures).
+
+<p>
+The date for finals has a slightly different time (7:30 pm - 10:15 pm);
+please hold that date in case we need it.
+See the
+<a href="http://registrar.gmu.edu/calendars/">GMU calendar</a>
+for general information on the GMU calendar.
+I routinely check the list of
+<a href="http://ulife.gmu.edu/calendar/religious-holiday-calendar/">&#8221;non-work&#8221;
+religious holidays</a> maintained by GMU.
+
+<p>
+Here is the current calendar (changes may occur):
+ 
+<table border="1" cellspacing="1" cellpadding="1">
+<tr>
+<td width="12%">2017-08-30</td>
+<td>
+1. Introduction.
+Tanenbaum 1.
+J. Waldo, G. Wyant, A. Wollrath, and S. Kendall,
+<a href="https://web.archive.org/web/20160118013943/http://cs.gmu.edu/~smalek/SWE622_files/papers/Waldo94.pdf">"A Note on Distributed Computing."</a>
+</td>
+</tr>
+
+<tr>
+<td>2017-09-06</td>
+<td>
+2. Communication Fundamentals and Intro to Middleware Solutions part 1.
+Tanenbaum 4.1 - 4.3.
+W. Emmerich,
+<a href="https://web.archive.org/web/20141121115002/http://cs.gmu.edu/~smalek/SWE622_files/papers/emmerich.pdf">
+"Software Engineering and Middleware: A Roadmap."</a>
+</td>
+</tr>
+
+<tr>
+<td>2017-09-13</td>
+<td>
+3. Middleware Solutions part 2.
+Tanenbaum 4.3 - 4.5.
+A. Carzaniga, D.S. Rosenblum, and A.L. Wolf, <a href="https://web.archive.org/web/20141121115012/http://cs.gmu.edu/~smalek/SWE622_files/papers/tocs01.pdf">"Design and Evaluation of a Wide-Area Event Notification Service."</a>.
+<a href="http://docs.oracle.com/javase/tutorial/rmi/index.html">Java Remote Method Invocation (RMI) Tutorial</a>.
+Reading assignment 1 is due (based on #1).
+</tr>
+
+<tr>
+<td>2017-09-20</td>
+<td>
+4. Naming, Service Discovery, and Service-Oriented Computing.
+Tanenbaum 5.1 - 5.3, Tanenbaum 12
+Debu Panda, <a href="https://web.archive.org/web/20150912123230/http://www.onjava.com/pub/a/onjava/2005/01/26/soa-intro.html?page=1">"An Introduction to Service-Oriented Architecture from a Java Developer Perspective."</a>
+Robert E. McGrath, <a href="https://web.archive.org/web/20141121114957/http://cs.gmu.edu/~smalek/SWE622_files/papers/discovery-TR.pdf">"Discovery and its Discontents: Discovery Protocols for Ubiquitous Computing."</a>
+Steve Vinoski, <a href="https://web.archive.org/web/20141121114952/http://cs.gmu.edu/~smalek/SWE622_files/papers/Vin02.pdf">"Where is Middleware?”</a>
+Reading assignment 2 is due (based on #2 and #3).
+</td>
+</tr>
+
+<tr>
+<td>2017-09-27</td>
+<td>
+5. Synchronization.
+Also: REST API.
+Tanenbaum 6.1 - 6.2.
+<!--
+OLD NOTE: For our class purposes "the Berkeley algorithm" is the algorithm
+of Gusella and Zatti [1989] and identified as such in
+Tanenbaum section 6.1 (page 249).
+<i>Many</i> algorithms are called "the Berkeley algorithm" on the Internet.
+-->
+</td>
+</tr>
+
+<tr>
+<td>2017-10-04</td>
+<td>
+6. Consistency and Coordination.
+Tanenbaum 3.1 and Tanenbaum 7.
+Reading assignment 3 is due (based on #4 and #5).
+</td>
+</tr>
+
+<tr>
+<td>2017-10-11</td>
+<td>Midterm exam.
+</td>
+</tr>
+
+<tr>
+<td>2017-10-18</td>
+<td>
+7. Replication and Fault Tolerance.
+Tanenbaum 8.1 - 8.3, Tanenbaum 8.5 - 8.6.
+<a href="https://web.archive.org/web/20160118062814/http://research.microsoft.com/en-us/um/people/lamport/pubs/byz.pdf">Leslie Lamport, Robert Shostak, and Marshall Pease,
+The Byzantine Generals Problem, 1982</a>.
+Programming assignment 1 is due (based on #1).
+</td>
+</tr>
+
+
+<tr>
+<td>2017-10-25</td>
+<td>
+8. Security.
+Tanenbaum 9.
+Reading assignment 4 is due (based on #6 and #7).
+</td>
+</tr>
+
+<tr>
+<td>2017-11-01</td>
+<td>
+9. Mobility and Adaptation.
+Tanenbaum 2.4, Tanenbaum 3.5.
+Note: the word 'mobility' has multiple meanings.
+A. Carzaniga, G. P. Picco, and G. Vigna. <a href="https://web.archive.org/web/20141121115007/http://cs.gmu.edu/~smalek/SWE622_files/papers/icse97.pdf">"Designing Distributed Applications with Mobile Code Paradigms."</a>
+J. O. Kephart, D. Chess. <a href="https://web.archive.org/web/20141121034553/http://users.soe.ucsc.edu/~griss/agent-papers/ieee-autonomic.pdf">“The Vision of Autonomic Computing.” IEEE Computer Vol. 36(1): 41-50 (2003)</a>
+</td>
+</tr>
+
+<tr>
+<td>2017-11-08</td>
+<td>
+10. Miscellaneous / More recent technologies:
+Blockchains (including Bitcoin);
+Apache Hadoop and Spark, part 1.
+<a href="https://bitcoin.org/bitcoin.pdf">Satoshi Nakamoto (pseudonym),
+"Bitcoin: A Peer-to-Peer Electronic Cash System"</a>,
+<a href="https://www.cs.berkeley.edu/~matei/papers/2012/nsdi_spark.pdf">Zaharia et al,
+"Resilient Distributed Datasets: A Fault-Tolerant Abstraction for
+In-Memory Cluster Computing"</a>.
+Reading assignment 5 is due (based on #8 and #9).
+</td>
+</tr>
+
+<tr>
+<td>2017-11-15</td>
+<td>
+Apache Hadoop and Spark, part 2.
+Programming assignment 2 due (based on #3).
+</td>
+</tr>
+
+<tr>
+<td>2017-11-22</td>
+<td>
+Thanksgiving.
+</tr>
+
+
+<tr>
+<td>2017-11-29</td>
+<td>
+Final exam.
+Will cover whole class, focusing on the material after the midterm.
+Hadoop/Spark quiz due, however, you should do
+the quiz <i>before</i> taking the final exam.
+</td>
+</tr>
+
+<tr>
+<td>2017-12-06</td>
+<td>
+Snow/backup day.
+I do <i>not</i> plan to physically meet on this day, but
+please be prepared to physically meet in case I change my mind.
+</tr>
+
+<tr>
+<td>2017-12-13</td>
+<td>
+Finals date.
+I do <i>not</i> plan to physically meet on this day, but
+please be prepared to physically meet in case I change my mind.
+</tr>
+
+</table>
+
+<h1>Other information</h1>
+<p>
+In class, please pay attention and <i>don&#8217;t distract others</i>.
+Please configure cell phones to vibrate (and not make noise) in class.
+<p>
+Please talk to me ahead-of-time if you have an anticipated absence that will
+interfere with the mid-term or final exam,
+e.g., a <a href="http://ulife.gmu.edu/religious_calendar.php">non-work religious holiday</a>,
+out-of-town work travel, or GMU athletic meet.
+Don&#8217;t bother telling me if you&#8217;ll miss other class times;
+I strongly recommend class attendance, but I understand if
+work, family, or other commitments sometimes make that difficult to do.
+You can always turn in work early
+(e.g., if a deadline conflicts with a religious holiday).
+
+<h1>Important information for any GMU class</h1>
+<p>
+<h2>Academic Integrity (Honor Code)</h2>
+<p>
+<a href="http://oai.gmu.edu/">GMU is an Honor Code</a> university;
+it's baked into the GMU culture.
+<i>I take the honor code very seriously</i>.
+<p>
+It is expected that students adhere to the George Mason University
+Honor Code as it relates to integrity regarding coursework and grades.
+The Honor Code reads as follows: "To promote a stronger sense of mutual
+responsibility, respect, trust, and fairness among all members of the
+George Mason University community and with the desire for greater
+academic and personal achievement, we, the student members of the
+University Community have set forth this: Student members of the George
+Mason University community pledge not to cheat, plagiarize, steal and/or
+lie in matters related to academic work."  More information about the
+Honor Code, including definitions of cheating, lying, and plagiarism, can
+be found at the Office of Academic Integrity website at
+<a href="http://oai.gmu.edu">http://oai.gmu.edu</a>.
+</p>
+<p>
+In particular, when you are responsible for a task, you
+will perform that task. When you rely on someone else&#8217;s work in an
+aspect of the performance of that task, you will give full credit in the
+proper, accepted form. Another aspect of academic integrity is the free
+play of ideas. Vigorous discussion and debate are encouraged in this
+course, with the firm expectation that all aspects of the class will be
+conducted with civility and respect for differing ideas, perspectives,
+and traditions.
+When in doubt (of any kind) please ask for guidance and clarification.
+<b>Do not plagiarize, and do not enable others to plagiarize from you.</b>
+<p>
+Although students are encouraged to discuss the topics covered
+in class, all homework assignments
+(reading assignments), exams, and projects (programming assignments)
+are to be
+completed individually, unless joint work is explicitly authorized by
+the instructor. If joint work is authorized, all contributing students
+must be listed on the submission.
+<p>
+Failure to adhere to the honor code can result in a variety of sanctions,
+including a zero on the assignment, an F in the course,
+suspension, or expulsion from GMU.
+Harsher sanctions are normal for graduate students; we expect at this
+point that you know better.
+<p>
+See the
+<a href="http://cs.gmu.edu/wiki/pmwiki.php/HonorCode/HomePage">Computer Science Honor Code policies</a> for more.
+
+<p>
+<h2>GMU Email Accounts</h2>
+<p>
+Please use the instructor&#8217;s email address for class questions.
+You <i>must</i> use your Mason email account for all email correspondence
+having anything to do with your work at Mason. Federal laws protecting
+your privacy rights require that we only communicate student information
+directly to students - and use of the university email system is our
+only way to validate your identity on email. You may forward your campus
+email elsewhere, but we can respond only to a Mason email account.
+
+<p>
+<h2>Office of Disability Services (ODS)</h2>
+<p>
+If you are a student with a disability and you need academic accommodations,
+it&#8217;s nice to let me know as a courtesy, but you must
+contact the Office of Disability Services (ODS) at 703-993-2474 or
+<a href="http://ods.gmu.edu">http://ods.gmu.edu</a>.
+All academic accommodations <i>must</i> be arranged through the ODS,
+not through me.
+If you qualify for accommodation,
+the ODS staff will give you a form detailing appropriate accommodations
+for your instructor (me), please bring that <i>form</i> to me.
+
+<p>
+<h2>Other GMU Resources &amp; Policies</h2>
+<p>
+<ul>
+<li><a href="http://labs.vse.gmu.edu/uploads/FacultyFAQ/StudentWelcome.pdf">Volgenau School of Engineering - Computing Resources (Student Welcome)</a>
+<li>Writing Center: A114 Robinson Hall; 703-993-1200;
+<a href="http://writingcenter.gmu.edu">
+http://writingcenter.gmu.edu</a>
+<li>University Libraries &#8220;Ask a Librarian&#8221;
+<a href="http://library.gmu.edu/mudge/IM/IMRef.html">
+http://library.gmu.edu/mudge/IM/IMRef.html</a>
+<li>Counseling and Psychological Services (CAPS): 703-993-2380;
+<a href="http://caps.gmu.edu">http://caps.gmu.edu</a>
+<li>The University Catalog:
+<a href="http://catalog.gmu.edu">http://catalog.gmu.edu</a>.
+This is the central resource for university
+policies affecting student, faculty, and staff conduct in university
+academic affairs.
+<li>Other policies are available at the GMU university policies site:
+<a href="http://universitypolicy.gmu.edu/">http://universitypolicy.gmu.edu/</a>. All members of the university
+community are responsible for knowing and following established policies.
+</ul>
+
+<p>
+This syllabus is version 2017-08-20.
+
+</body>
