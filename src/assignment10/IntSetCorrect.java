@@ -16,13 +16,9 @@ public class IntSetCorrect implements Cloneable {
 		if (!(obj instanceof IntSetCorrect))
 			return false;
 		IntSetCorrect s = (IntSetCorrect) obj;
-		for (Integer i :this.els) {
-			if (!s.els.contains(i)) return false;
-		}		
-		for (Integer j :s.els) {
-			if (!this.els.contains(j)) return false;
-		}
-		return s.hashCode() == this.hashCode();
+		if(s.els.containsAll(els) && els.containsAll(s.els))
+			return true;		
+		return false;
 	}
 
 	@Override
